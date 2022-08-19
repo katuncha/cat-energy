@@ -24,164 +24,166 @@
 
         <nav class="main-header__nav nav">
           <ul class="main-header__list">
-            <li class="main-header__item">
+            <li class="main-header__item main-header__item--active">
               <a href="#">главная</a>
             </li>
             <li class="main-header__item">
-              <a href="#">каталог продукции</a>
+              <a href="catalog.html">каталог продукции</a>
             </li>
             <li class="main-header__item">
-              <a href="#">подборр программы</a>
+              <a href="form.html">подборр программы</a>
             </li>
           </ul>
         </nav>
       </div>
     </header>
 
-    <section class="page__promo promo">
-      <div class="promo__content">
-        <div class="promo__up">
-          <h1 class="promo__title">
-            Функциональное питание для котов
-          </h1>
-          <p class="promo__text">
-            Занялся собой? Займись котом!
-          </p>
-        </div>
-
-        <div class="promo__bottom">
-          <img class="promo__img" width="280" height="270" src="img/promo__img.png" alt="Изображение банки с питанием для котов">
-          <a class="promo__button button" href="#">Подобрать программу</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="page__programs programs">
-      <div class="container">
-        <h2 class="visually-hidden">Список программ</h2>
-        <ul class="programs__list">
-          <li class="program__item program__item--slim">
-            <h3 class="promo__title">Похудение</h3>
+    <main class="page__main">
+      <section class="page__promo promo">
+        <div class="promo__content">
+          <div class="promo__up">
+            <h1 class="promo__title">
+              Функциональное питание для котов
+            </h1>
             <p class="promo__text">
-              Ваш кот весит больше собаки и почти утратил способность лазить по деревьям?
-              Пора на диету! Cat Energy Slim поможет вашему питомцу сбросить лишний вес.
+              Занялся собой? Займись котом!
             </p>
-            <a class="promo__link" href="#">Каталог slim</a>
-          </li>
-          <li class="program__item program__item--mass">
-            <h3 class="promo__title">Набор массы</h3>
-            <p class="promo__text">
-              Заработать авторитет среди дворовых котов и даже собак?
-              Серия Cat Energy Pro поможет вашему коту нарастить необходимые мышцы!
-            </p>
-            <a class="promo__link" href="#">Каталог slim</a>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="page__features features">
-      <div class="container">
-        <h2 class="features__title">Как это работает</h2>
-        <ol class="features__list">
-          <li class="features__item features__item--nutrients">
-            <p class="features__text">
-              Функциональное питание
-              содержит только полезные
-              питательные вещества.
-            </p>
-          </li>
-          <li class="features__item features__item--water">
-            <p class="features__text">
-              Выпускается в виде порошка,
-              который нужно лишь залить
-              кипятком и готово.
-            </p>
-          </li>
-          <li class="features__item features__item--meal">
-            <p class="features__text">
-              Замените один-два приема
-              обычной еды на наше
-              функциональное питание.
-            </p>
-          </li>
-          <li class="features__item features__item--time">
-            <p class="features__text">
-              Уже через месяц наслаждайтесь изменениями к лучшему вашего питомца!
-            </p>
-          </li>
-        </ol>
-      </div>
-    </section>
-
-    <section class="page__example example">
-      <div class="container">
-        <h2 class="example__title">Живой пример</h2>
-        <p class="example__text">
-          Борис сбросил 5 кг за 2 месяца, просто заменив свой обычный корм на Cat Energy Slim. Отличный результат без изнуряющих тренировок!
-          При этом он не менял своих привычек и по-прежнему спит по 16 часов в день.
-        </p>
-
-        <div class="example__stats stats">
-          <dl class="stats__list">
-            <div class="stats__item">
-              <dt class="stats__number">
-                5 кг
-              </dt>
-              <dd class="stats__description">
-                снижение
-                веса
-              </dd>
-            </div>
-
-            <div class="stats__item">
-              <dt class="stats__number">
-                60 дней
-              </dt>
-              <dd class="stats__description">
-                затрачено
-                времени
-              </dd>
-            </div>
-          </dl>
-
-          <p class="stats__price">
-            Затраты на питание: 15 000 <span>руб.</span>
-          </p>
-        </div>
-
-        <img class="example__img example__img--before" width="311" height="232" src="img/before-mobile.png" alt="Изображение откормленного кота">
-        <img class="example__img example__img--after" src="img/after-mobile.png" width="251" height="240" alt="Изображение худого кота">
-
-        <div class="example__range range">
-          <span class="range__text">было</span>
-          <!-- наверное range__control лишняя обертка? -->
-          <div class="range__control">
-            <div class="range__scale">
-              <div class="range__bar"></div>
-            </div>
-            <div class="range__toggle"></div>
           </div>
-          <span class="range__text">стало</span>
+
+          <div class="promo__bottom">
+            <img class="promo__img" width="280" height="270" src="img/promo__img.png" alt="Изображение банки с питанием для котов">
+            <a class="promo__button button" href="#">Подобрать программу</a>
+          </div>
         </div>
+      </section>
 
-      </div>
-    </section>
+      <section class="page__programs programs">
+        <div class="container">
+          <h2 class="visually-hidden">Список программ</h2>
+          <ul class="programs__list">
+            <li class="program__item program__item--slim">
+              <h3 class="promo__title">Похудение</h3>
+              <p class="promo__text">
+                Ваш кот весит больше собаки и почти утратил способность лазить по деревьям?
+                Пора на диету! Cat Energy Slim поможет вашему питомцу сбросить лишний вес.
+              </p>
+              <a class="promo__link" href="#">Каталог slim</a>
+            </li>
+            <li class="program__item program__item--mass">
+              <h3 class="promo__title">Набор массы</h3>
+              <p class="promo__text">
+                Заработать авторитет среди дворовых котов и даже собак?
+                Серия Cat Energy Pro поможет вашему коту нарастить необходимые мышцы!
+              </p>
+              <a class="promo__link" href="#">Каталог slim</a>
+            </li>
+          </ul>
+        </div>
+      </section>
 
-    <section class="page__map map">
-      <h2 class="visually-hidden">Адрес</h2>
+      <section class="page__features features">
+        <div class="container">
+          <h2 class="features__title">Как это работает</h2>
+          <ol class="features__list">
+            <li class="features__item features__item--nutrients">
+              <p class="features__text">
+                Функциональное питание
+                содержит только полезные
+                питательные вещества.
+              </p>
+            </li>
+            <li class="features__item features__item--water">
+              <p class="features__text">
+                Выпускается в виде порошка,
+                который нужно лишь залить
+                кипятком и готово.
+              </p>
+            </li>
+            <li class="features__item features__item--meal">
+              <p class="features__text">
+                Замените один-два приема
+                обычной еды на наше
+                функциональное питание.
+              </p>
+            </li>
+            <li class="features__item features__item--time">
+              <p class="features__text">
+                Уже через месяц наслаждайтесь изменениями к лучшему вашего питомца!
+              </p>
+            </li>
+          </ol>
+        </div>
+      </section>
 
-      <div class="map__content">
-        <h3 class="map__title">
-          приглашаем к сотрудничеству дилеров!
-        </h3>
-        <p class="map__adress">
-          ул. Большая
-          Конюшенная, д. 19/8
-          <span>Санкт-Петербург</span>
-        </p>
-      </div>
-    </section>
+      <section class="page__example example">
+        <div class="container">
+          <h2 class="example__title">Живой пример</h2>
+          <p class="example__text">
+            Борис сбросил 5 кг за 2 месяца, просто заменив свой обычный корм на Cat Energy Slim. Отличный результат без изнуряющих тренировок!
+            При этом он не менял своих привычек и по-прежнему спит по 16 часов в день.
+          </p>
+
+          <div class="example__stats stats">
+            <dl class="stats__list">
+              <div class="stats__item">
+                <dt class="stats__number">
+                  5 кг
+                </dt>
+                <dd class="stats__description">
+                  снижение
+                  веса
+                </dd>
+              </div>
+
+              <div class="stats__item">
+                <dt class="stats__number">
+                  60 дней
+                </dt>
+                <dd class="stats__description">
+                  затрачено
+                  времени
+                </dd>
+              </div>
+            </dl>
+
+            <p class="stats__price">
+              Затраты на питание: 15 000 <span>руб.</span>
+            </p>
+          </div>
+
+          <img class="example__img example__img--before" width="311" height="232" src="img/before-mobile.png" alt="Изображение откормленного кота">
+          <img class="example__img example__img--after" src="img/after-mobile.png" width="251" height="240" alt="Изображение худого кота">
+
+          <div class="example__range range">
+            <span class="range__text">было</span>
+            <!-- наверное range__control лишняя обертка? -->
+            <div class="range__control">
+              <div class="range__scale">
+                <div class="range__bar"></div>
+              </div>
+              <div class="range__toggle"></div>
+            </div>
+            <span class="range__text">стало</span>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="page__map map">
+        <h2 class="visually-hidden">Адрес</h2>
+
+        <div class="map__content">
+          <h3 class="map__title">
+            приглашаем к сотрудничеству дилеров!
+          </h3>
+          <p class="map__adress">
+            ул. Большая
+            Конюшенная, д. 19/8
+            <span>Санкт-Петербург</span>
+          </p>
+        </div>
+      </section>
+    </main>
 
     <footer class="page__footer footer">
       <div class="container">
