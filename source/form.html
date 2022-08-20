@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML Academy: Cat Anergy. Programms.</title>
+    <title>HTML Academy: Cat Anergy. Programs.</title>
   </head>
   <body class="page__body">
     <header class="page__header main-header">
@@ -21,7 +21,8 @@
 
         </div>
 
-        <nav class="main-header__nav nav">
+        <!-- так можно, только класс .nav надо убрать -->
+        <nav class="main-header__nav"> //  блок nav не нужен, если ты дальше все стилизуешь как элементы блока main-header
           <ul class="main-header__list">
             <li class="main-header__item">
               <a href="index.html">главная</a>
@@ -34,46 +35,70 @@
             </li>
           </ul>
         </nav>
+        <!-- либо так -->
+        <nav class="main-header__nav nav">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="index.html">главная</a>
+            </li>
+            <li class="nav__item nav__item--active">
+              <a href="#">каталог продукции</a>
+            </li>
+            <li class="nav__item">
+              <a href="form.html">подборр программы</a>
+            </li>
+          </ul>
+        </nav>
       </div>
     </header>
 
     <main class='page__main main'>
+
+      <!-- Вот это я бы вынесла из формы?  так как это больше про то о чем страница, а не о данных формы -->
+      <!-- --- -->
+      <h1 class="main__title">Подбор программы</h1>
+      <p class="main__desc">Заполните анкету, и мы подберем
+        программу питания для вашего кота</p>
+      <!-- --- -->
+
       <form class="page__form form" action="https://echo.htmlacademy.ru" method="get">
-        <h1 class="form__title">Подбор программы</h1>
-        <p class="form__intro">Заполните анкету, и мы подберем
-          программу питания для вашего кота</p>
-        <fieldset class="form__item data-form">
-          <legend class="form__title subtitle visually-hidden">Ввод данных о себе</legend>
-          <div class="data-form__field field">
+        <!-- здесь поменяла классы -->
+        <!-- --- -->
+        <fieldset class="form__fieldset"> // это тот случай, когда класс удобно назвать семантическим тегом
+          <legend class="visually-hidden">Ввод данных о себе</legend> // если класс visually-hidden, то зачем другие классы? visually-hidden - просто скроит нам заголовки и другие классы не понадобяться
+          <div class="form__fieldset-item field">
             <label class="field__label" for="name">Имя:*</label>
             <input class="field__input" type="text" name="name" id="name" placeholder="Барсик" required>
           </div>
-          <div class="data-form__field field">
+          <div class="form__fieldset-item field">
             <label for="weight">Имя:*</label>
             <input type="text" name="weight" id="weight" placeholder="7" required>
           </div>
-          <div class="data-form__field field">
+          <div class="form__fieldset-item field">
             <label class="field__label" for="weight">Вес (кг):*</label>
-            <input class="field__input" type="text" name="weight" id="weight" placeholder="7" required>
+            <input class="field__input" type="number" name="weight" id="weight" placeholder="7" required> // здесь лучше подходит тип Number. можно убрать дефолтные стрелки у поля number (https://www.w3schools.com/howto/howto_css_hide_arrow_number.asp)
           </div>
-          <div class="data-form__field field">
+          <div class="form__fieldset-item field">
             <label class="field__label" for="age">Возраст (лет):</label>
-            <input class="field__input" type="text" name="age" id="age" placeholder="7">
+            <input class="field__input" type="number" name="age" id="age" placeholder="7"> //здесь лучше подходит тип Number.
           </div>
         </fieldset>
+        <!-- --- -->
 
-        <fieldset class="form__item program-form">
-          <legend class="form__title subtitle visually-hidden">Выбор программы</legend>
-          <ul class="program-form__list radio">
+        <fieldset class="form__fieldset">
+          <legend class="visually-hidden">Выбор программы</legend>
+          <ul class="form__fieldset-list radio"> 
             <li class="radio__item">
-              <label class="radio__label">
-                <input class="radio__input visually-hidden radio__input--current" type="radio" name="program" value="lose-weight" checked>
-                Похудение
-              </label>
+              <!-- поменяла вложенность. Так проще нам будет слилизовать радиокнопки -->
+              <!-- https://itchief.ru/html-and-css/styling-checkbox-and-radio -->
+              <!-- --- -->
+              <input id="lose-weight" class="radio__input  radio__input--current" type="radio" name="program" value="lose-weight" checked> // здесь не нужен класс visually-hidden. visually-hidden нужен чтобы скрыть текст визуально, но роботы поисковики прочтут его и поймут о чем данный блок. Здесь мы скроем поле через класс radio__input , пропишим display none
+              <label class="radio__label" for="lose-weight">Похудение</label>
+              <!-- --- -->
             </li>
             <li class="radio__item">
               <label class="radio__label">
-                <input class="radio__input visually-hidden" type="radio" name="program" value="add-weight">
+                <input class="radio__input"  type="radio" name="program" value="add-weight">
                 Набор массы
               </label>
             </li>
@@ -86,60 +111,64 @@
           </ul>
         </fieldset>
 
-        <fieldset class="form__item contact-form">
-          <legend class="form__title subtitle">
+        <fieldset class="form__fieldset">
+          <legend class="form__fieldsed-title">
             Контактные данные (владельца кота)
           </legend>
-          <div class="contact-form__field field">
+          <div class="form__fieldset-item field">
             <label class="field__label" for="email">e-mail:*</label>
             <input class="field__input field__input--email" type="email" name="email" id="email" placeholder="kuklachev@gmail.com">
           </div>
-          <div class="contsct-form__field field">
+          <div class="form__fieldset-item field">
             <label class="field__label" for="email">телефон:*</label>
             <input class="field__input field__input--tel" type="tel" name="tel" id="tel" placeholder="8(960)900-60-90">
           </div>
         </fieldset>
 
-        <fieldset class="form__item comment-form">
-          <legend class="form__title subtitle">Комментарий</legend>
-          <textarea class="comment-form__textarea" name="comment" id="comment" cols="" rows="">
-            Расскажиет обо всех повадках кота
+        <fieldset class="form__fieldset">
+          <legend class="form__fieldsed-title">Комментарий</legend>
+          <textarea class="form__textarea" name="comment" id="comment" cols="" rows="">
+            Расскажиет обо всех повадках кота //это должен быть placeholder
           </textarea>
         </fieldset>
 
-        <fieldset class="form__item add-form">
-          <legend class="form__title subtitle">
+        <fieldset class="form__fieldset">
+          <legend class="form__fieldset-title">
             Дополнительно
           </legend>
-          <ul class="add-form__list checkbox">
+          <ul class="form__fieldset-list checkbox">
             <li class="checkbox__item">
-              <label class="checkbox__label">
-                <input class="visually-hidden checkbox__input checkbox__input--current" name="sweetener" type="checkbox" checked>
-                Сахарозаменитель
-              </label>
+              <!-- Здесь тоже надо поменять вложенность тегов. Так же как в radio кнопках -->
+              <!-- --- -->
+              
+              <input class="checkbox__input checkbox__input--current" name="sweetener" type="checkbox" id="sweetener" checked>
+              <label class="checkbox__label" for="sweetener">Сахарозаменитель</label>
+              
+              <!-- --- -->
             </li>
             <li class="checkbox__item">
               <label class="checkbox__label">
-                <input class="visually-hidden checkbox__input" name="water" type="checkbox">
+                <input class="checkbox__input" name="water" type="checkbox">
                 Питьевая вода
               </label>
             </li>
             <li class="checkbox__item">
               <label class="checkbox__label">
-                <input class="visually-hidden checkbox__input" name="milk" type="checkbox">
+                <input class="checkbox__input" name="milk" type="checkbox">
                 Молоко
               </label>
             </li>
             <li class="checkbox__item">
               <label class="checkbox__label">
-                <input class="visually-hidden checkbox__input" name="vitamins" type="checkbox">
+                <input class="checkbox__input" name="vitamins" type="checkbox">
                 Витамины
               </label>
             </li>
           </ul>
         </fieldset>
 
-        <div class="form__button button">Отправить заявку</div>
+        <!-- чтобы форма отправилась автоматически через нажатие на кнопку надо тег использовать button и type="submit" -->
+        <button class="form__button button" type="submit">Отправить заявку</button>
         <p class="form__footnote">
           * — Обязательные поля
         </p>
